@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/XrefList" xmlns:tns="http://www.example.org/XrefList" elementFormDefault="qualified">
+
+    <complexType name="XrefType">
+    	<sequence>
+    		<element name="xrefKey" type="string"></element>
+    		<element name="xrefVal" type="string"></element>
+    	</sequence>
+    </complexType>
+
+    <element name="Xref" type="tns:XrefType"></element>
+
+    <complexType name="XrefListType">
+    	<sequence>
+    		<element ref="tns:Xref" maxOccurs="unbounded" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <element name="XrefList" type="tns:XrefListType"></element>
+</schema>

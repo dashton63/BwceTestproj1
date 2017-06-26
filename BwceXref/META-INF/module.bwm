@@ -1,5 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmi:id="_UgEScFnJEeeMHcsfEfbtcA" targetNamespace="http://tns.tibco.com/bw/composite/BwceXref" name="BwceXref" compositeext:version="1.0.0" compositeext:formatVersion="2">
+<sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BW="http://xsd.tns.tibco.com/amf/models/sca/implementationtype/BW" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:rest="http://xsd.tns.tibco.com/bw/models/binding/rest" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmlns:scact="http://xsd.tns.tibco.com/amf/models/sca/componentType" xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmi:id="_UgEScFnJEeeMHcsfEfbtcA" targetNamespace="http://tns.tibco.com/bw/composite/BwceXref" name="BwceXref" compositeext:version="1.0.0" compositeext:formatVersion="2">
+  <sca:service xmi:id="_PgnqwFpqEeepOJJ_vNlEQA" name="xref" promote="ComponentXref/xref">
+    <sca:interface.wsdl xmi:id="_PgwNoFpqEeepOJJ_vNlEQA" interface="http://xmlns.example.com/20170626082320PLT#wsdl.interface(xref)" scaext:wsdlLocation="../Processes/bwcexref/Xref.bwp"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_Pg6lsFpqEeepOJJ_vNlEQA" name="RestService" path="/xref/{xrefkey}" docBasePath="http://localhost:7777/BwceXref" docResourcePath="Xref" basePath="/" connector="bwcexref.Xref" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/bwcexref.Xref-Xref.json">
+      <operation xmi:id="_Pg_eMFpqEeepOJJ_vNlEQA" operationName="post" nickname="post-xref" httpMethod="POST" responseStyle="element" requestStyle="element">
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <operation xmi:id="_Pg_eMVpqEeepOJJ_vNlEQA" operationName="get" nickname="get-xref" httpMethod="GET" responseStyle="array" requestStyle="array">
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <parameters xmi:id="_PilZoFpqEeepOJJ_vNlEQA">
+        <parameterMapping xmi:id="_PimnwFpqEeepOJJ_vNlEQA" parameterName="xrefkey" parameterType="Path" required="true"/>
+      </parameters>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_Pg_eMlpqEeepOJJ_vNlEQA" bindingName="RestService"/>
+  </sca:service>
   <sca:property xmi:id="_U7nmAFnJEeeMHcsfEfbtcA" name="BW.APPNODE.NAME" type="XMLSchema:string" scalable="true"/>
   <sca:property xmi:id="_U79kQFnJEeeMHcsfEfbtcA" name="BW.DEPLOYMENTUNIT.NAME" type="XMLSchema:string" scalable="true"/>
   <sca:property xmi:id="_U7-yYFnJEeeMHcsfEfbtcA" name="BW.HOST.NAME" type="XMLSchema:string" scalable="true"/>
@@ -7,4 +24,10 @@
   <sca:property xmi:id="_U8BOoFnJEeeMHcsfEfbtcA" name="BW.MODULE.VERSION" type="XMLSchema:string" scalable="true"/>
   <sca:property xmi:id="_U8IjYFnJEeeMHcsfEfbtcA" name="BW.CLOUD.PORT" type="XMLSchema:int" scalable="true"/>
   <sca:property xmi:id="_U8KYkFnJEeeMHcsfEfbtcA" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:component xmi:id="_Pgd5wFpqEeepOJJ_vNlEQA" name="ComponentXref" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_PgfH4FpqEeepOJJ_vNlEQA" processName="bwcexref.Xref"/>
+    <sca:service xmi:id="_PgkAYFpqEeepOJJ_vNlEQA" name="xref">
+      <sca:interface.wsdl xmi:id="_PgkncFpqEeepOJJ_vNlEQA" interface="http://xmlns.example.com/20170626082320PLT#wsdl.interface(xref)" scaext:wsdlLocation="../Processes/bwcexref/Xref.bwp"/>
+    </sca:service>
+  </sca:component>
 </sca:composite>

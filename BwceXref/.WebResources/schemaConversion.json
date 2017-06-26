@@ -1,0 +1,12 @@
+{"records": [
+    {
+        "jsonSchemaLocation": "/BwceXref/Service Descriptors/bwcexref.Xref-Xref.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "http://www.example.org/XrefList"
+    },
+    {
+        "jsonSchemaLocation": "/BwceXref/Service Descriptors/bwcexref.Xref-Xref.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "http://xmlns.example.com/Xref/parameters"
+    }
+]}
